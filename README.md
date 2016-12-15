@@ -10,13 +10,15 @@ I forked the whole repo, but all the relevant code is in the `slim_on_customdata
   - `NUM_CLASSES` needs to match the number of classes/labels you're training on
   - OPTIONALLY, rename testset.py to match the name of your custom dataset
 
-2b. If you renamed testset.py, edit dataset_factory.py (also in the datasets directory), and change the testset entry in `datasets_map` to match your chosen dataset name.
+3. If you renamed testset.py, edit dataset_factory.py (also in the datasets directory), and change the testset entry in `datasets_map` to match your chosen dataset name.
 
-3. The training is kicked off by the `train_inception_on_testset.sh` script, which will call `train_image_classifier.py` which all the necessary parameters. 
+4. The training is kicked off by the `train_inception_on_testset.sh` script, which will call `train_image_classifier.py` which all the necessary parameters. 
   - point `TRAIN_DIR` and `DATASET_DIR` to the appropriate directories
   - IF YOU RENAMED TESTSET, change the `--dataste_name` parameter to match
   - Set the rest of your parameters as you will. The ones here aren't necessarily recommended, I chose them randomly when I started. 
   - If you want to both train and evaluate, de-comment the evaluation section in the script.
+  
+5. To run, `sh train_inception_on_testset.sh`
 
 These are roughly the steps to get something to start training without getting caught up by errors. No guarantees it'll train a useable model.
 
